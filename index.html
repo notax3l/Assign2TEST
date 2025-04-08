@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoothie Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Welcome to the Smoothie Machine</h1>
+            <p>Customize and create your own smoothie!</p>
+        </header>
+
+        <main>
+            <form id="order-form">
+                <!-- Base Selection -->
+                <section class="form-section">
+                    <h2>Choose your base</h2>
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="base" value="Yogurt"> Yogurt
+                        </label>
+                        <label>
+                            <input type="radio" name="base" value="Milk"> Milk
+                        </label>
+                        <label>
+                            <input type="radio" name="base" value="Almond Milk"> Almond Milk
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Fruits Selection -->
+                <section class="form-section">
+                    <h2>Choose your fruits</h2>
+                    <div class="fruits-grid option-group">
+                        <label><input type="checkbox" name="fruits" value="Strawberry"> Strawberry</label>
+                        <label><input type="checkbox" name="fruits" value="Banana"> Banana</label>
+                        <label><input type="checkbox" name="fruits" value="Mango"> Mango</label>
+                        <label><input type="checkbox" name="fruits" value="Blueberry"> Blueberry</label>
+                        <label><input type="checkbox" name="fruits" value="Apple"> Apple</label>
+                    </div>
+                </section>
+
+                <!-- Boosters Selection -->
+                <section class="form-section">
+                    <h2>Choose your boosters</h2>
+                    <div class="boosters-grid option-group">
+                        <label><input type="checkbox" name="boosters" value="Protein"> Protein</label>
+                        <label><input type="checkbox" name="boosters" value="Fiber"> Fiber</label>
+                        <label><input type="checkbox" name="boosters" value="Vitamins"> Vitamins</label>
+                    </div>
+                </section>
+
+                <!-- Sweetness Level -->
+                <section class="form-section">
+                    <h2>Sweetness Level</h2>
+                    <div class="slider-container">
+                        <input type="range" id="sweetness" min="1" max="10" value="5">
+                        <span id="sweetness-value">5</span>
+                    </div>
+                </section>
+
+                <!-- Notes Section -->
+                <section class="form-section">
+                    <h2>Special Instructions</h2>
+                    <div class="input-group">
+                        <label for="notes">Additional notes (optional)</label>
+                        <textarea id="notes"></textarea>
+                    </div>
+                </section>
+
+                <!-- Form Controls -->
+                <section class="form-controls">
+                    <button type="submit" id="order-button">Create My Smoothie</button>
+                    <button type="reset" id="reset-button">Reset</button>
+                </section>
+            </form>
+
+            <!-- Result Section -->
+            <section class="result-section hidden">
+                <h2>Your Smoothie</h2>
+                <div class="smoothie-display">
+                    <div class="smoothie-visual" id="smoothie-images"></div>
+                    <div class="smoothie-details">
+                        <h3></h3>
+                        <p class="smoothie-description"></p>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="price-details" id="price-details"></div>
+                </div>
+
+                <button id="new-order-button">Start a New Order</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Smoothie Machine. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

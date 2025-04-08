@@ -1,0 +1,340 @@
+/* Smoothie Machine - Main Stylesheet */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #ff6b6b;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Main Content Sections */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.form-section h2 {
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+}
+
+/* Option Groups */
+.option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.fruits-grid, .boosters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+/* Radio and Checkbox Styles */
+.radio-option, .checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Slider Styles */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+input[type="range"] {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+/* Text Input and Textarea Styles */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Form Controls */
+.form-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#order-button {
+    background-color: #4CAF50;
+    color: white;
+    flex-grow: 2;
+}
+
+#order-button:hover {
+    background-color: #45a049;
+}
+
+#reset-button {
+    background-color: #f0f0f0;
+    color: #666;
+    flex-grow: 1;
+}
+
+#reset-button:hover {
+    background-color: #e0e0e0;
+}
+
+#new-order-button {
+    background-color: #ff6b6b;
+    color: white;
+    display: block;
+    margin: 1.5rem auto 0;
+}
+
+#new-order-button:hover {
+    background-color: #ff5252;
+}
+
+/* Result Section */
+.result-section {
+    text-align: center;
+}
+
+.result-section h2 {
+    color: #ff6b6b;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.result-section.hidden {
+    display: none;
+}
+
+/* Smoothie Display */
+.smoothie-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .smoothie-display {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Smoothie Visual */
+.smoothie-visual {
+    flex: 1;
+    max-width: 300px;
+}
+
+.smoothie-cup {
+    position: relative;
+    width: 180px;
+    height: 240px;
+    margin: 0 auto;
+}
+
+.cup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 160"><path d="M20,0 L80,0 L90,150 Q90,160 80,160 L20,160 Q10,160 10,150 Z" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 85%;
+    background-color: #ff9e9e;
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+}
+
+.straw {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 200px;
+    background-color: #ff4757;
+    border-radius: 6px;
+    z-index: 20;
+}
+
+.straw::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #ff6b81;
+    border-radius: 6px;
+}
+
+/* Smoothie Details */
+.smoothie-details {
+    flex: 2;
+    text-align: left;
+}
+
+.smoothie-details h3 {
+    color: #4a4a4a;
+    margin-bottom: 0.5rem;
+}
+
+.smoothie-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Order Summary */
+.order-summary {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.order-summary h3 {
+    margin-bottom: 1rem;
+    color: #4a4a4a;
+}
+
+.price-details {
+    text-align: left;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.price-row.total {
+    font-weight: bold;
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+}
+
+#price-details span {
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+}
